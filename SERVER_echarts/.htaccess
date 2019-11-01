@@ -1,0 +1,11 @@
+#<Files "*">
+#  Require all denied
+#</Files>
+
+RewriteEngine On
+
+#если файл на сервере не существует то
+RewriteCond %{REQUEST_FILENAME} !-f
+
+#перенаправление запроса на api.php
+RewriteRule (.+) api.php/$1
