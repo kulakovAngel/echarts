@@ -1,0 +1,25 @@
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+input, button {
+    padding: 0.7rem;
+    margin: 0.3rem 0;
+    outline: none;
+    border: 1px solid #fff;
+}
+
+button {
+    cursor: pointer;
+}
+
+input {
+    cursor: text;
+}
+
+.form__message {
+    padding: 12px 0;
+    text-align: right;
+    color: red;
+}

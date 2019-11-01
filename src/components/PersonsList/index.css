@@ -1,0 +1,19 @@
+.persons-list {
+    list-style: none;
+    font-size: 1.4rem;
+    letter-spacing: 1px;
+}
+
+.persons-list__item {
+    flex: 0 0 200px;
+    box-shadow: 1px 1px 1px 1px;
+    margin: 16px 0;
+    padding: 12px;
+    background: #555;
+}
+
+.persons-list__item:hover {
+    box-shadow: 1px 1px 1px 0px;
+    margin: 16px 0;
+    padding: 12px;
+}

@@ -1,0 +1,18 @@
+.document-footer {
+    display: flex;
+    background: #555;
+    color: #ddd;
+    padding: 36px;
+    justify-content: space-between;
+}
+
+.document-footer__section {
+    flex: 1 1 auto;
+    display: flex;
+    justify-content: center;
+    padding: 18px;
+}
+
+.document-footer__section:nth-child(1) {
+    border-right: 1px solid;
+}
