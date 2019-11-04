@@ -19,5 +19,15 @@ export const fetchSinglePerson = (person) => (
 
 export const postPerson = (person) => (
     axios.post(`${API_URL}/persons`, person)
-    .then(res => (res.data) )
+    .then(res => (res.data))
 );
+
+//export const postPerson = (person) => (
+//    fetch(`${API_URL}/persons`, {
+//        //mode: 'no-cors',
+//        method: 'POST',
+//        //headers: { 'Content-Type': 'application/json;charset=utf-8' },
+//        body: JSON.stringify(person)
+//    })
+//    .then(res => res.json() )
+//);

@@ -17,9 +17,11 @@ const personsReducer = (state = [], action) => {
 const failedReducer = (state = {}, action) => {
     switch(action.type) {
         case 'ADD_PERSONS_FAILED':
-            return (action.message) ? {[action.type]: action.message } : {};
+            return {[action.type]: action.message };
         case 'ADD_SINGLE_PERSON_FAILED':
-            return (action.message) ? {[action.type]: action.message } : {};
+            return {[action.type]: action.message };
+        case 'REMOVE_ERRORS':
+            return {};
         default:
             return state;
     }

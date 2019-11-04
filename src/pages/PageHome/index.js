@@ -8,7 +8,6 @@ function PageHome() {
                 <h2>The Echarts example</h2>
                 <p>The service provides simple persons data entry and plotting the <a href='https://echarts.apache.org/examples/en/index.html'>Echart</a>.</p>
                 <p>You may <Link to='/list'>view the list</Link> or <Link to='/echarts'>Echart</Link>, as well as enter new data.</p>
-                <iframe src='https://echarts.apache.org/examples/en/index.html' width='60%' height='400' title='echarts'></iframe>
             </section>
             <section>
                 <h2>Lorem ipsum</h2>

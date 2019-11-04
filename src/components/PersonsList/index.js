@@ -15,12 +15,12 @@ class PersonsList extends React.Component {
     
     render() {
         const { persons } = this.props;
-        
+        console.log(this.props.persons)
         return (
             <ol className={component}>
                 {
                     persons && persons.map((item) => (
-                        <li key={item.id} className={`${component}__item`}>{`${item.name} ${item.surname}, ${item.age}`} years old</li>
+                        item && <li key={item.id} className={`${component}__item`}>{`${item.name} ${item.surname}, ${item.age}`} years old</li>
                     ))
                 }
             </ol>

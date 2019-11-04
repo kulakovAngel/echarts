@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 
 import './index.css';
 
-function Error (props) {
+function ErrorContainer (props) {
     const { errors } = props;
     const errorExist = (Object.keys(errors).length) ? true : false;
     return (
@@ -22,4 +22,4 @@ const mapStateToProps = state => (
     { errors: state.errors }
 );
 
-export default connect(mapStateToProps)(Error);
+export default connect(mapStateToProps)(ErrorContainer);

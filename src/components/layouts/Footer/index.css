@@ -1,9 +1,12 @@
 .document-footer {
     display: flex;
-    background: #555;
     color: #ddd;
     padding: 36px;
     justify-content: space-between;
+    background-image: linear-gradient(rgba(58, 70, 82, 0.97), rgba(58, 70, 82, 0.97)), url('back.png');
+    background-position: center center, center center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .document-footer__section {
@@ -13,6 +16,7 @@
     padding: 18px;
 }
 
-.document-footer__section:nth-child(1) {
-    border-right: 1px solid;
+.document-footer__heading {
+    color: #a5a9ac;
+    border-bottom: 1px solid;
 }
