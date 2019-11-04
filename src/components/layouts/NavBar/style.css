@@ -13,27 +13,24 @@
 
 .document-nav__logo-container {
     display: flex;
-    margin: 2rem 1rem;
+    margin: 24px 16px;
 }
 
-.document-nav__nav-list {
-    display: flex;
-    flex-direction: column;
-    list-style: none;
-}
-
-.document-nav__nav-item a {
+.document-nav
+.nav__item a {
     display: block;
-    padding: 1rem;
+    padding: 16px;
     color: #a5a9ac;
     font-size: 1.6rem;
 }
 
-.document-nav__nav-item a:hover {
+.document-nav
+.nav__item a:hover {
     background: #2e3b41;
 }
 
-.document-nav__nav-item a.active {
+.document-nav
+.nav__item a.active {
     background: #3e4b51;
 }
 

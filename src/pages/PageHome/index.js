@@ -1,13 +1,38 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
 
-function PageHome() {
+import { setTitle } from './../../helpers';
+
+import './style.css';
+import img1 from './echart1.png';
+import img2 from './echart2.png';
+import img3 from './echart3.png';
+
+function PageHome(props) {
+    
+    setTitle('Home Page', props.pageTitle.title, props.dispatch);
+    
     return (
         <>
             <section>
                 <h2>The Echarts example</h2>
                 <p>The service provides simple persons data entry and plotting the <a href='https://echarts.apache.org/examples/en/index.html'>Echart</a>.</p>
                 <p>You may <Link to='/list'>view the list</Link> or <Link to='/echarts'>Echart</Link>, as well as enter new data.</p>
+            </section>
+            <section className='img-galery'>
+                <figure className='img-galery__container'>
+                    <img src={img1} alt='echart' className='img-galery__img' />
+                    <figcaption className='img-galery__title'>Echart Example Lorem ipsum</figcaption>
+                </figure>
+                <figure className='img-galery__container'>
+                    <img src={img2} alt='echart' className='img-galery__img' />
+                    <figcaption className='img-galery__title'>Echart Example Lorem ipsum</figcaption>
+                </figure>
+                <figure className='img-galery__container'>
+                    <img src={img3} alt='echart' className='img-galery__img' />
+                    <figcaption className='img-galery__title'>Echart Example Lorem ipsum</figcaption>
+                </figure>
             </section>
             <section>
                 <h2>Lorem ipsum</h2>
@@ -46,4 +71,8 @@ function PageHome() {
     )
 }
 
-export default PageHome;
+const mapStateToProps = state => (
+    { pageTitle: state.pageTitle }
+);
+
+export default connect(mapStateToProps)(PageHome);

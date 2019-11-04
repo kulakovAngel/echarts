@@ -1,0 +1,11 @@
+.document-header {
+    background: #d6dde5;
+}
+
+.document-header {
+    box-shadow: 0 0 8px #404c57;
+}
+
+.document-header__page-title {
+    color: #c62d4d;
+}

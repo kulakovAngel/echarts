@@ -1,8 +1,9 @@
 import React from 'react';
 
+import NavLinks from './../NavLinks';
 import { DEVELOPER, CONTACTS } from './../../../consts';
 
-import './index.css';
+import './style.css';
 
 const component = 'document-footer';
 
@@ -10,27 +11,17 @@ function Footer() {
     return (
         <footer className={component}>
             <section className={`${component}__section`}>
-                <div>
-                    <h4 className={`${component}__heading`}>All rights reserved</h4>
-                    <p>&copy;{DEVELOPER}, {new Date().getFullYear()}</p>
-                </div>
+                <h4 className={`${component}__heading`}>The Echarts example</h4>
+                <p>&copy;{DEVELOPER}, {new Date().getFullYear()}</p>
+                <p>All rights reserved</p>
             </section>
             <section className={`${component}__section`}>
-                <div>
-                    <h4 className={`${component}__heading`}>Quick links:</h4>
-                    <ul>
-                        <li>Home</li>
-                        <li>List</li>
-                        <li>Echarts</li>
-                        <li>About</li>
-                    </ul>
-                </div>
+                <h4 className={`${component}__heading`}>Quick links:</h4>
+                <NavLinks />
             </section>
             <section className={`${component}__section`}>
-                <div>
-                    <h4 className={`${component}__heading`}>Contacts:</h4>
-                    <p>{CONTACTS}</p>
-                </div>
+                <h4 className={`${component}__heading`}>Contacts:</h4>
+                <p>{CONTACTS}</p>
             </section>
         </footer>
     );

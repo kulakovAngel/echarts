@@ -1,8 +1,13 @@
 import React from 'react';
+import { connect } from 'react-redux';
 
 import { DEVELOPER, CONTACTS } from './../../consts';
+import { setTitle } from './../../helpers';
 
-function PageAbout() {
+function PageAbout(props) {
+    
+    setTitle('About', props.pageTitle.title, props.dispatch);
+
     return (
         <>
             <section>
@@ -19,4 +24,9 @@ function PageAbout() {
     );
 }
 
-export default PageAbout;
+const mapStateToProps = state => (
+    { pageTitle: state.pageTitle }
+);
+
+
+export default connect(mapStateToProps)(PageAbout);

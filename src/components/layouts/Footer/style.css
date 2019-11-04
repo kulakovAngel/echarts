@@ -10,13 +10,27 @@
 }
 
 .document-footer__section {
-    flex: 1 1 auto;
-    display: flex;
-    justify-content: center;
-    padding: 18px;
+    flex: 0 0 33.33%;
+    padding: 48px 24px;
 }
 
 .document-footer__heading {
-    color: #a5a9ac;
+    color: #ebeff2;
     border-bottom: 1px solid;
+}
+
+.document-footer
+.nav__item a {
+    display: block;
+    color: #ddd;
+}
+
+.document-footer
+.nav__item a:hover {
+    color: #a5a9ac;
+}
+
+.document-footer
+.nav__item a.active {
+    color: #c62d4d;
 }

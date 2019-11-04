@@ -3,28 +3,29 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 import PageHome from './pages/PageHome';
 import PageViewList from './pages/PageViewList';
+import PageViewSingleHuman from './pages/PageViewSingleHuman';
 import PageViewEcharts from './pages/PageViewEcharts';
 import PageAbout from './pages/PageAbout';
 import PageNotFound from './pages/PageNotFound';
 
 import Header from './components/layouts/Header';
-import Nav from './components/layouts/Nav';
+import NavBar from './components/layouts/NavBar';
 import Footer from './components/layouts/Footer';
-import ErrorContainer from './components/ErrorContainer';
+import Message from './components/Message';
 
 import './App.css';
 
 function App() {
     return (
         <Router>
-            <ErrorContainer />
-            <Nav />
+            <NavBar />
             <div className='main-content'>
                 <Header />
                 <main className='document-main'>
                     <Switch>
                         <Route exact path='/' component={PageHome} />
-                        <Route path='/list' component={PageViewList} />
+                        <Route exact path='/list' component={PageViewList} />
+                        <Route path='/list/:id' component={PageViewSingleHuman} />
                         <Route path='/echarts' component={PageViewEcharts} />
                         <Route path='/about' component={PageAbout} />
                         <Route path='*' component={PageNotFound} />
@@ -32,6 +33,7 @@ function App() {
                 </main>
                 <Footer />
             </div>
+            <Message />
         </Router>
     );
 }

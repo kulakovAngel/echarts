@@ -1,13 +1,19 @@
 import React from 'react';
+import { connect } from 'react-redux';
 
-import './style.css';
+import { setTitle } from './../../helpers';
 
-function PageNotFound() {
+function PageNotFound(props) {
+    
+    setTitle('Page Not Found', props.pageTitle.title, props.dispatch);
+    
     return (
-        <header>
-            <h1>Page Not Found</h1>
-        </header>
+        <h2>404 Error!</h2>
     );
 }
 
-export default PageNotFound;
+const mapStateToProps = state => (
+    { pageTitle: state.pageTitle }
+);
+
+export default connect(mapStateToProps)(PageNotFound);

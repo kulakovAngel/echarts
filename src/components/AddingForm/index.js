@@ -1,9 +1,9 @@
 import React from 'react';
 import { Field, reduxForm } from 'redux-form';
 
-import './index.css';
+import './style.css';
 
-const component = 'form';
+const component = 'adding-form';
 
 class AddingForm extends React.Component {
     
@@ -17,18 +17,17 @@ class AddingForm extends React.Component {
         if (values.name && values.surname && values.age && !isNaN(values.age)) {
             this.setState({valid: true, message: 'Data is being sent...'});
             this.props.dispatch({
-                type: 'PERSONS_POST',
+                type: 'POST_PERSON',
                 payload: values
             });
         } else {
-            this.setState({valid: false, message: 'All fields must be filled!'});
+            this.setState({valid: false, message: 'All fields must be required!'});
         }
-        
     }
     
     render() {
         const { handleSubmit, pristine, reset, submitting } = this.props;
-        const {valid, message} = this.state;
+        const { valid, message } = this.state;
         return (
             <form onSubmit={handleSubmit(this.onSubmit)} className={component}>
                 <Field
@@ -49,7 +48,7 @@ class AddingForm extends React.Component {
                     type='number'
                     placeholder='Age*'
                 />
-                <button type='submit' disabled={pristine || submitting}>Add!</button>
+                <button type='submit' disabled={pristine || submitting}>Add</button>
                 <button type='button' disabled={pristine || submitting} onClick={reset}>Clear form</button>
                 {!valid && <div className={`${component}__message`}>{message}</div>}
             </form>

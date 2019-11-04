@@ -1,7 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 
-import './index.css';
+import './style.css';
 
 const component = 'persons-list';
 
@@ -9,20 +10,21 @@ class PersonsList extends React.Component {
     
     componentDidMount() {
         this.props.dispatch({
-            type: "PERSONS_FETCH"
+            type: "GET_ALL_PERSONS"
         });
     }
     
     render() {
         const { persons } = this.props;
-        console.log(this.props.persons)
         return (
             <ol className={component}>
-                {
-                    persons && persons.map((item) => (
-                        item && <li key={item.id} className={`${component}__item`}>{`${item.name} ${item.surname}, ${item.age}`} years old</li>
-                    ))
-                }
+                {persons.map((item) => (
+                    <li key={item.id} className={`${component}__item`}>
+                        <Link to={`/list/` + item.id}>
+                            {`${item.name} ${item.surname}, ${item.age}`} years old
+                        </Link>
+                    </li>
+                ))}
             </ol>
         );
     }

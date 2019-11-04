@@ -1,9 +1,9 @@
 import { call, put, takeEvery } from 'redux-saga/effects';
-import { fetchPersons, postPerson } from './../api';
+import { getAllPersons, getSinglePerson, postPerson } from './../api';
 
-function* fetchPersonsSaga(action) {
+function* getPersonsSaga(action) {
     try {
-        const persons = yield call(fetchPersons, action.payload);
+        const persons = yield call(getAllPersons, action.payload);
         yield put({type: "ADD_PERSONS", payload: persons});
         yield put({type: "REMOVE_ERRORS"});
     } catch (e) {
@@ -11,9 +11,9 @@ function* fetchPersonsSaga(action) {
     }
 }
 
-function* postPersonSaga(action) {
+function* getSinglePersonSaga(action) {
     try {
-        const person = yield call(postPerson, action.payload);
+        const person = yield call(getSinglePerson, action.payload);
         yield put({type: "ADD_SINGLE_PERSON", payload: person});
         yield put({type: "REMOVE_ERRORS"});
     } catch (e) {
@@ -21,9 +21,21 @@ function* postPersonSaga(action) {
     }
 }
 
+function* postPersonSaga(action) {
+    const { payload } = action;
+    try {
+        yield call(postPerson, payload);
+        yield put({type: "ADD_PERSON_TO_ARRAY", payload});
+        yield put({type: "REMOVE_ERRORS"});
+    } catch (e) {
+        yield put({type: "ADD_PERSON_TO_ARRAY_FAILED", message: e.message});
+    }
+}
+
 function* mySaga() {
-    yield takeEvery("PERSONS_FETCH", fetchPersonsSaga);
-    yield takeEvery("PERSONS_POST", postPersonSaga);
+    yield takeEvery("GET_ALL_PERSONS", getPersonsSaga);
+    yield takeEvery("GET_SINGLE_PERSON", getSinglePersonSaga);
+    yield takeEvery("POST_PERSON", postPersonSaga);
 }
 
 export default mySaga;

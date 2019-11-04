@@ -2,11 +2,13 @@ import React from 'react';
 import { connect } from 'react-redux';
 import ReactEcharts from 'echarts-for-react';
 
+import './style.css';
+
 class Echart extends React.Component {
   
     componentDidMount() {
         this.props.dispatch({
-            type: "PERSONS_FETCH"
+            type: "GET_ALL_PERSONS"
         });
     }
     
@@ -17,7 +19,7 @@ class Echart extends React.Component {
                 option={{
                         xAxis: {
                             type: 'category',
-                            data: persons.map((item) => (item.name + " " + item.surname))
+                            data: persons.map((item) => (`${item.name} ${item.surname}`))
                         },
                         yAxis: { type: 'value' },
                         series: [{

@@ -1,9 +1,13 @@
 @import url('https://fonts.googleapis.com/css?family=Barlow+Condensed&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Nunito&display=swap');
-* {
+
+*,
+*:before,
+*:after {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    transition: 0.3s;
 }
 
 html,
@@ -11,6 +15,7 @@ body {
     height: 100%;
     background: #eff3f6;
     font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1.2rem;
 }
 
 #root {
@@ -46,4 +51,4 @@ a {
     font-size: 1.1rem;
 }
 
-p { margin: 18px 0; }
+p, ol, ul { margin: 18px 0; }

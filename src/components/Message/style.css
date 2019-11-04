@@ -1,0 +1,22 @@
+.error-message {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: calc(100% - 24px);
+    border: 1px solid red;
+    background: pink;
+    border-radius: 4px;
+    z-index: 100000;
+    margin: 12px;
+}
+
+.error-message__heading {
+    border-bottom: 1px solid red;
+    
+}
+
+.error-message__heading,
+.error-message__message {
+    padding: 8px;
+    color: red;
+}

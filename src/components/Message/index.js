@@ -1,7 +1,9 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import './index.css';
+import './style.css';
+
+const component = 'error-message';
 
 function ErrorContainer (props) {
     const { errors } = props;
@@ -9,9 +11,9 @@ function ErrorContainer (props) {
     return (
         <>
             {errorExist && (
-                <div className='error'>
-                    <h4 className='error__heading'>Error:</h4>
-                    <p className='error__message'>{errors[Object.keys(errors)[0]]}</p>
+                <div className={`${component}`}>
+                    <h4 className={`${component}__heading`}>Error:</h4>
+                    <p className={`${component}__message`}>{errors[Object.keys(errors)[0]]}</p>
                 </div>
             )}
         </>

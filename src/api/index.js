@@ -1,14 +1,14 @@
 import axios from 'axios';
 import { API_URL } from './../consts.js';
 
-export const fetchPersons = () => (
+export const getAllPersons = () => (
     axios.get(`${API_URL}/persons`)
-    .then(res => (res.data))
+    .then(res => res.data)
 );
 
-export const fetchSinglePerson = (person) => (
-    axios.get(`${API_URL}/persons/${person}`)
-    .then(res => (res.data))
+export const getSinglePerson = (personId) => (
+    axios.get(`${API_URL}/persons/${personId}`)
+    .then(res => res.data)
 );
 
 //receiving data piecemeal
@@ -19,7 +19,7 @@ export const fetchSinglePerson = (person) => (
 
 export const postPerson = (person) => (
     axios.post(`${API_URL}/persons`, person)
-    .then(res => (res.data))
+    .then( res => res.status)
 );
 
 //export const postPerson = (person) => (
